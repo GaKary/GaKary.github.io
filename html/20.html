@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html
+>
+  <head>
+
+    <title>Ariana</title>
+   
+    <link
+   
+    />
+
+    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+
+    <!-- Ve CSS -->
+    <script src="../assets/js/config.js"></script>
+  </head>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Horizontal</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      font-weight: bold;
+    }
+
+    .menu {
+      background-color: #0e3d5c;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 15px 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu .logo {
+      width: 150px;
+      height: 100px;
+      margin-right: 20px;
+    }
+
+    .menu a {
+      color: rgb(40, 152, 245);
+      text-decoration: none;
+      padding: 12px 20px;
+      margin: 0 15px;
+      display: block;
+      text-align: center;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.2s ease-in-out;
+    }
+
+    .menu a:hover {
+      background-color: #575757;
+      transform: scale(1.05);
+    }
+
+    .menu a.active {
+      background-color: #56a6be;
+      transform: scale(1.05);
+    }
+
+    .menu a:focus {
+      outline: none;
+    }
+
+    .menu-item {
+      position: relative;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(69, 107, 133, 0.1);
+      z-index: 100;
+    }
+
+    .submenu a {
+
+      padding: 10px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+      border-radius: 5;
+    }
+
+    .submenu a:hover {
+
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <img src="../assets/img/icons/unicons/i.png" alt="Logo" class="logo"> 
+    <a href="index.html">Inicio</a>
+    
+      <a href="2.html">Ventas</a>
+
+      <a href="20.html">Compras</a>
+
+      </div>
+    </div>
+  <script>
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    menuItems.forEach(item => {
+      const link = item.querySelector('a');
+      const submenu = item.querySelector('.submenu');
+
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isVisible = submenu.style.display === 'block';
+        document.querySelectorAll('.submenu').forEach(sub => sub.style.display = 'none');
+        submenu.style.display = isVisible ? 'none' : 'block';
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.menu-item')) {
+        document.querySelectorAll('.submenu').forEach(sub => sub.style.display = 'none');
+      }
+    });
+  </script>
+</body>
+</html> 
+                      </div>
+                    </div>
+                    <div class="col-6 mb-4">
+                      <div class="card">
+                        
+                            <div class="dropdown">
+                              
+                              </button>
+                             
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>    
+                              </div>
+                              
+                              </div>
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+
+                <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <ul class="p-0 m-0">
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-success"><i class="bx bx-cart"></i></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Carrito de Compras</h6>
+                              <small class="text-muted">Electrodomésticos, Tecnología</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold" data-value="15.4">15.4k</small>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-info"><i class="bx bx-credit-card"></i></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Pagos en Línea</h6>
+                              <small class="text-muted">Tarjetas Visa, Mastercard</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold" data-value="72.3">72.3k</small>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-secondary"><i class="bx bx-store"></i></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Tiendas Online</h6>
+                              <small class="text-muted">Amazon, eBay, MercadoLibre</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold" data-value="35.8">35.8k</small>
+                            </div>
+                          </div>
+                        </li>
+                        <hr>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-warning"><i class="bx bx-gift"></i></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Regalos y Ofertas</h6>
+                              <small class="text-muted">Tienda de Regalos, Descuentos</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold" data-value="22.5">22.5k</small>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-danger"><i class="bx bx-mobile"></i></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Tiendas de Tecnología</h6>
+                              <small class="text-muted">Smartphones, Accesorios</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold" data-value="42.3">42.3k</small>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-dark"><i class="bx bx-book"></i></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Librerías Online</h6>
+                              <small class="text-muted">Libros, E-books</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold" data-value="19.8">19.8k</small>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                      <hr>
+                      <div class="d-flex justify-content-between">
+                        <h6 class="mb-0">Total:</h6>
+                        <small id="total-sum" class="fw-semibold">0</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <script>
+                  // Sumar los valores de los elementos con la clase "user-progress"
+                  const elements = document.querySelectorAll('.user-progress small');
+                  let totalSum = 0;
+                
+                  elements.forEach(element => {
+                    const value = parseFloat(element.getAttribute('data-value'));
+                    totalSum += value;
+                  });
+                
+                  // Mostrar el total
+                  document.getElementById('total-sum').innerText = totalSum.toFixed(1) + 'k';
+                </script>
+                
+
+                <div class="col-md-6 col-lg-4 order-1 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <ul class="nav nav-pills" role="tablist">
+                        <li class="nav-item">
+                          <button
+                            type="button"
+                            class="nav-link active"
+                            role="tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#navs-tabs-line-card-income"
+                            aria-controls="navs-tabs-line-card-income"
+                            aria-selected="true"
+                          >
+                          
+                        </li>
+
+                      </ul>
+                    </div>
+                    <div class="card-body px-0">
+                      <div class="tab-content p-0">
+                        <div class="tab-pane fade show active" id="navs-tabs-line-card-income" role="tabpanel">
+                          <div class="d-flex p-4 pt-3">
+                            <div class="avatar flex-shrink-0 me-3">
+                              <img src="../assets/img/icons/unicons/wallet.png" alt="User" />
+                            </div>
+                            <div>
+                              <small class="text-muted d-block">Saldo Total de Compras</small>
+                              <div class="d-flex align-items-center">
+                                <h6 class="mb-0 me-1">$192.10</h6>
+                                <small class="text-success fw-semibold">
+                                  <i class="bx bx-chevron-up"></i>
+                                  77.9%
+                                </small>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="incomeChart"></div>
+                          <div class="d-flex justify-content-center pt-4 gap-2">
+                            <div class="flex-shrink-0">
+                              <div id="expensesOfWeek"></div>
+                            </div>
+                            <div>
+                              <p class="mb-n1 mt-1">Compras Semanal</p>
+                              <small class="text-muted">$89 menos que la semana pasada</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 order-2 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                      <h5 class="card-title m-0 me-2">Compras Online</h5>
+                      <div class="dropdown">
+                        <button
+                          class="btn p-0"
+                          type="button"
+                          id="transactionID"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
+                          <a class="dropdown-item" href="javascript:void(0);" onclick="changeTransactionValues('semana')">Semanal</a>
+                          <a class="dropdown-item" href="javascript:void(0);" onclick="changeTransactionValues('mes')">Mes</a>
+                          <a class="dropdown-item" href="javascript:void(0);" onclick="changeTransactionValues('año')">Año</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <ul class="p-0 m-0" id="transactionList">
+                        <!-- Se llenarán los valores con JS -->
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <script>
+                  function changeTransactionValues(period) {
+                    // Valores por defecto de las transacciones
+                    const transactionData = {
+                      semana: [
+                        { name: "Paypal", amount: "+82.6 USD", logo: "../assets/img/icons/unicons/paypal.png" },
+                        { name: "Wallet Visa", amount: "+270.69 USD", logo: "../assets/img/icons/unicons/wallet.png" },
+                        { name: "Transferencia Reembolso", amount: "+637.91 USD", logo: "../assets/img/icons/unicons/chart.png" },
+                        { name: "Tarjeta de Crédito Productos", amount: "-838.71 USD", logo: "../assets/img/icons/unicons/cc-success.png" },
+                        { name: "Descuento", amount: "-92.45 USD", logo: "../assets/img/icons/unicons/wallet.png" },
+                      ],
+                      mes: [
+                        { name: "Paypal", amount: "+350.6 USD", logo: "../assets/img/icons/unicons/paypal.png" },
+                        { name: "Wallet Visa", amount: "+1,270.69 USD", logo: "../assets/img/icons/unicons/wallet.png" },
+                        { name: "Transferencia Reembolso", amount: "+3,637.91 USD", logo: "../assets/img/icons/unicons/chart.png" },
+                        { name: "Tarjeta de Crédito Productos", amount: "-1,838.71 USD", logo: "../assets/img/icons/unicons/cc-success.png" },
+                        { name: "Descuento", amount: "-392.45 USD", logo: "../assets/img/icons/unicons/wallet.png" },
+                      ],
+                      año: [
+                        { name: "Paypal", amount: "+1,200.6 USD", logo: "../assets/img/icons/unicons/paypal.png" },
+                        { name: "Wallet Visa", amount: "+4,270.69 USD", logo: "../assets/img/icons/unicons/wallet.png" },
+                        { name: "Transferencia Reembolso", amount: "+12,637.91 USD", logo: "../assets/img/icons/unicons/chart.png" },
+                        { name: "Tarjeta de Crédito Productos", amount: "-5,838.71 USD", logo: "../assets/img/icons/unicons/cc-success.png" },
+                        { name: "Descuento", amount: "-1,092.45 USD", logo: "../assets/img/icons/unicons/wallet.png" },
+                      ]
+                    };
+                
+                    // Obtener los datos correspondientes al periodo
+                    const selectedData = transactionData[period];
+                    
+                    // Limpiar la lista actual
+                    const transactionList = document.getElementById('transactionList');
+                    transactionList.innerHTML = '';
+                
+                    // Llenar la lista con los nuevos valores
+                    selectedData.forEach(transaction => {
+                      const listItem = document.createElement('li');
+                      listItem.classList.add('d-flex', 'mb-4', 'pb-1');
+                      
+                      listItem.innerHTML = `
+                        <div class="avatar flex-shrink-0 me-3">
+                          <img src="${transaction.logo}" alt="${transaction.name}" class="rounded" />
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            <small class="text-muted d-block mb-1">${transaction.name}</small>
+                            <h6 class="mb-0">${transaction.name}</h6>
+                          </div>
+                          <div class="user-progress d-flex align-items-center gap-1">
+                            <h6 class="mb-0">${transaction.amount}</h6>
+                          </div>
+                        </div>
+                      `;
+                      transactionList.appendChild(listItem);
+                    });
+                  }
+                
+                  // Llamar a la función por defecto con "semana"
+                  changeTransactionValues('semana');
+                </script>
+                
+              </div>
+            </div>
+            <!-- / Content -->
+            <div class="content-backdrop fade"></div>
+          </div>
+        </div>
+      </div>
+      <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../assets/vendor/js/bootstrap.js"></script>
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="../assets/vendor/js/menu.js"></script>
+    <!-- Vendors JS -->
+    <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+    <!-- Main JS -->
+    <script src="../assets/js/main.js"></script>
+    <!-- Page JS -->
+    <script src="../assets/js/dashboards-analytics.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
+</html>
