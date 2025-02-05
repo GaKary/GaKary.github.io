@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html
+>
+  <head>
+
+    <title>Ariana</title>
+   
+    <link
+   
+    />
+
+    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+
+    <!-- Ve CSS -->
+    <script src="../assets/js/config.js"></script>
+  </head>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      font-weight: bold;
+    }
+
+    .menu {
+      background-color: #0e3d5c;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 15px 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu .logo {
+      width: 150px;
+      height: 100px;
+      margin-right: 20px;
+    }
+
+    .menu a {
+      color: rgb(40, 152, 245);
+      text-decoration: none;
+      padding: 12px 20px;
+      margin: 0 15px;
+      display: block;
+      text-align: center;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.2s ease-in-out;
+    }
+
+    .menu a:hover {
+      background-color: #575757;
+      transform: scale(1.05);
+    }
+
+    .menu a.active {
+      background-color: #56a6be;
+      transform: scale(1.05);
+    }
+
+    .menu a:focus {
+      outline: none;
+    }
+
+    .menu-item {
+      position: relative;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(69, 107, 133, 0.1);
+      z-index: 100;
+    }
+
+    .submenu a {
+
+      padding: 10px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+      border-radius: 5;
+    }
+
+    .submenu a:hover {
+
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <img src="../assets/img/icons/unicons/i.png" alt="Logo" class="logo"> 
+    <a href="index.html">Inicio</a>
+
+      <a href="2.html">Ventas</a>
+
+      <a href="20.html">Compras</a>
+
+    </div>
+  </div>
+
+  <script>
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    menuItems.forEach(item => {
+      const link = item.querySelector('a');
+      const submenu = item.querySelector('.submenu');
+
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isVisible = submenu.style.display === 'block';
+        document.querySelectorAll('.submenu').forEach(sub => sub.style.display = 'none');
+        submenu.style.display = isVisible ? 'none' : 'block';
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.menu-item')) {
+        document.querySelectorAll('.submenu').forEach(sub => sub.style.display = 'none');
+      }
+    });
+  </script>
+</body>
+</html> 
+<div class="card">
+  <div class="row row-bordered g-0">
+    <div class="col-md-8">
+      <h5 class="card-header m-0 me-2 pb-3">Vendedor del Año</h5>
+      <div id="totalRevenueChart" class="px-2"></div>
+    </div>
+    <div class="col-md-4">
+      <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #e3f2fd;
+            color: #0e3d5c;
+        }
+        #listaVendedores {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vendedor {
+            margin: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #0e3d5c;
+            box-shadow: 2px 2px 10px rgba(17, 14, 14, 0.1);
+            width: 220px;
+            transition: transform 0.3s;
+        }
+        .vendedor:hover {
+            transform: scale(1.05);
+        }
+        .mejor-vendedor {
+            background-color: rgb(40, 152, 245);
+            color: white;
+            font-weight: bold;
+        }
+        button {
+            background-color: rgb(40, 152, 245);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: rgb(40, 152, 245);
+        }
+    </style>
+</head>
+<style>
+  body {
+      font-family: Arial, sans-serif;
+      background-color: #e3f2fd;
+      color: #0e3d5c;
+      text-align: center;
+  }
+  table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      border: 2px solid #b4dbeb;
+  }
+  th, td {
+      padding: 5px;
+      text-align: center;
+      border: 1px solid #0e3d5c;
+      font-size: 14px;
+  }
+  th {
+      background-color: rgb(40, 152, 245);
+      color: rgb(247, 246, 246);
+  }
+  tr:nth-child(even) {
+      background-color: #f1f8e9;
+  }
+  tr:hover {
+      background-color: #81d4fa;
+  }
+  .highlight {
+      background-color: #8be470;
+  }
+</style>
+</head>
+<body>
+<button onclick="resaltarTopVendedores()">Venta al Mes</button>
+<table>
+  <thead>
+      <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Ventas</th>
+          <th>Efectivo</th>
+      </tr>
+  </thead>
+  <tbody id="tabla-vendedores">
+      <tr>
+          <td>Oliver</td>
+          <td>Espinoza</td>
+          <td>689</td>
+          <td>$ 5678</td>
+      </tr>
+      <tr>
+        <td>Jonathan</td>
+        <td>Castillo</td>
+        <td>79</td>
+        <td>$ 167</td>
+      </tr>
+      <tr>
+        <td>Gabriel</td>
+        <td>Romo</td>
+        <td>35</td>
+        <td>$ 67</td>
+      </tr>
+      <tr>
+        <td>Ariana</td>
+        <td>Rodríguez</td>
+        <td>46</td>
+        <td>$ 89</td>
+      </tr>
+      <tr>
+        <td>Stefy</td>
+        <td>Pincay</td>
+        <td>68</td>
+        <td>$ 187</td>
+      </tr>
+      <tr>
+        <td>Jhony</td>
+        <td>Cruz</td>
+        <td>89</td>
+        <td>$ 124</td>
+      </tr>
+      <tr>
+        <td>Alejandra</td>
+        <td>Yepez</td>
+        <td>312</td>
+        <td>$ 689</td>
+      </tr>
+      <tr>
+        <td>Martin</td>
+        <td>Proaño</td>
+        <td>23</td>
+        <td>$ 35</td>
+      </tr>
+  </tbody>
+</table>
+
+<script>
+  function resaltarTopVendedores() {
+      // Obtengo todas las filas de la tabla
+      const filas = document.querySelectorAll('#tabla-vendedores tr');
+      let topVendedor = null;
+      let maxVentas = 0;
+
+      // Iterar sobre las filas y comparar las ventas
+      filas.forEach(fila => {
+          const celdas = fila.querySelectorAll('td');
+          if (celdas.length > 0) {
+              const ventas = parseInt(celdas[2].textContent); // Extraigo el número de ventas
+
+              if (ventas > maxVentas) {
+                  maxVentas = ventas;
+                  topVendedor = fila;
+              }
+          }
+      });
+
+      // Resalto al vendedor con más ventas
+      if (topVendedor) {
+          topVendedor.classList.add('highlight');
+      }
+  }
+</script>
+</body>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Función para actualizar el porcentaje mostrado
+  function updatePercentage(percentage, year) {
+    const percentageElement = document.getElementById('growthPercentage');
+    percentageElement.textContent = `${percentage}% Crecimiento de la Tienda`;
+    
+    // Cambiar el texto del botón de dropdown al año seleccionado
+    const dropdownButton = document.getElementById('growthReportId');
+    dropdownButton.textContent = year;
+  }
+</script>
+
+
+                      </div>
+                    </div>
+                    <div class="col-6 mb-4">
+                      <div class="card">
+                        
+                            <div class="dropdown">
+                              
+                              </button>
+                             
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>    
+                              </div>
+                              
+                              </div>
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+
+                <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                      <div class="card-title mb-0">
+                        <h5 class="m-0 me-2">Estadísticas de Pedidos</h5>
+                        <small class="text-muted">42.82k Ventas totales</small>
+                      </div>
+                      <div class="dropdown">
+                        <button
+                          class="btn p-0"
+                          type="button"
+                          id="orderStatistics"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="orderStatistics">
+                          <a class="dropdown-item" href="javascript:void(0);" onclick="showModa()">Moda</a>
+                          <a class="dropdown-item" href="javascript:void(0);" onclick="showDeportivo()">Deportivo</a>
+                          <a class="dropdown-item" href="javascript:void(0);" onclick="showDecoracion()">Decoración</a>
+                          <a class="dropdown-item" href="javascript:void(0);" onclick="showElectronico()">Electrónico</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex flex-column align-items-center gap-1">
+                          <h2 class="mb-2" id="categoryNumber">8,258</h2>
+                          <span id="categoryLabel">Pedidos semanales</span>
+                        </div>
+                        <div id="orderStatisticsChart"></div>
+                      </div>
+                      <ul class="p-0 m-0">
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-primary"><i class="bx bx-mobile-alt"></i></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Electrónico</h6>
+                              <small class="text-muted">Movil, Auriculares, TV</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold">82.5k</small>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-success"><i class="bx bx-closet"></i></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Moda</h6>
+                              <small class="text-muted">Camisas, Jeans, Shorts</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold">23.8k</small>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-info"><i class="bx bx-home-alt"></i></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Decoración</h6>
+                              <small class="text-muted">Pintura, Sofá</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold">849k</small>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-secondary"><i class="bx bx-football"></i></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Deportivo</h6>
+                              <small class="text-muted">Balón, Raqueta</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold">99</small>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <script>
+
+                  function showModa() {
+                    document.getElementById("categoryNumber").textContent = "23.8k";
+                    document.getElementById("categoryLabel").textContent = "Moda";
+                  }
+                
+                  function showDeportivo() {
+                    document.getElementById("categoryNumber").textContent = "99";
+                    document.getElementById("categoryLabel").textContent = "Deportivo";
+                  }
+                
+                  function showDecoracion() {
+                    document.getElementById("categoryNumber").textContent = "849k";
+                    document.getElementById("categoryLabel").textContent = "Decoración";
+                  }
+                
+                  function showElectronico() {
+                    document.getElementById("categoryNumber").textContent = "82.5k";
+                    document.getElementById("categoryLabel").textContent = "Electrónico";
+                  }
+                </script>
+                
+
+                <div class="col-md-6 col-lg-4 order-1 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <ul class="nav nav-pills" role="tablist">
+                        <li class="nav-item">
+                          <button
+                            type="button"
+                            class="nav-link active"
+                            role="tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#navs-tabs-line-card-income"
+                            aria-controls="navs-tabs-line-card-income"
+                            aria-selected="true"
+                          >
+                          
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="card-body px-0">
+                      <div class="tab-content p-0">
+                        <div class="tab-pane fade show active" id="navs-tabs-line-card-income" role="tabpanel">
+                          <div class="d-flex p-4 pt-3">
+                            <div class="avatar flex-shrink-0 me-3">
+                              <img src="../assets/img/icons/unicons/wallet.png" alt="User" />
+                            </div>
+                            <div>
+                              <small class="text-muted d-block">Saldo Total</small>
+                              <div class="d-flex align-items-center">
+                                <h6 class="mb-0 me-1">$459.10</h6>
+                                <small class="text-success fw-semibold">
+                                  <i class="bx bx-chevron-up"></i>
+                                  42.9%
+                                </small>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="incomeChart"></div>
+                          <div class="d-flex justify-content-center pt-4 gap-2">
+                            <div class="flex-shrink-0">
+                              <div id="expensesOfWeek"></div>
+                            </div>
+                            <div>
+                              <p class="mb-n1 mt-1">Gastos Semanal</p>
+                              <small class="text-muted">$39 menos que la semana pasada</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 order-2 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                      <h5 class="card-title m-0 me-2">Transacciones</h5>
+                      <div class="dropdown">
+                        <button
+                          class="btn p-0"
+                          type="button"
+                          id="transactionID"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
+                          <a class="dropdown-item" href="javascript:void(0);" onclick="changeTransactionValues('semana')">Semanal</a>
+                          <a class="dropdown-item" href="javascript:void(0);" onclick="changeTransactionValues('mes')">Mes</a>
+                          <a class="dropdown-item" href="javascript:void(0);" onclick="changeTransactionValues('año')">Año</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <ul class="p-0 m-0" id="transactionList">
+                        <!-- Se llenarán los valores con JS -->
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <script>
+                  function changeTransactionValues(period) {
+                    // Valores por defecto de las transacciones
+                    const transactionData = {
+                      semana: [
+                        { name: "Paypal", amount: "+82.6 USD", logo: "../assets/img/icons/unicons/paypal.png" },
+                        { name: "Wallet Visa", amount: "+270.69 USD", logo: "../assets/img/icons/unicons/wallet.png" },
+                        { name: "Transferencia Reembolso", amount: "+637.91 USD", logo: "../assets/img/icons/unicons/chart.png" },
+                        { name: "Tarjeta de Crédito Productos", amount: "-838.71 USD", logo: "../assets/img/icons/unicons/cc-success.png" },
+                        { name: "Descuento", amount: "-92.45 USD", logo: "../assets/img/icons/unicons/wallet.png" },
+                      ],
+                      mes: [
+                        { name: "Paypal", amount: "+350.6 USD", logo: "../assets/img/icons/unicons/paypal.png" },
+                        { name: "Wallet Visa", amount: "+1,270.69 USD", logo: "../assets/img/icons/unicons/wallet.png" },
+                        { name: "Transferencia Reembolso", amount: "+3,637.91 USD", logo: "../assets/img/icons/unicons/chart.png" },
+                        { name: "Tarjeta de Crédito Productos", amount: "-1,838.71 USD", logo: "../assets/img/icons/unicons/cc-success.png" },
+                        { name: "Descuento", amount: "-392.45 USD", logo: "../assets/img/icons/unicons/wallet.png" },
+                      ],
+                      año: [
+                        { name: "Paypal", amount: "+1,200.6 USD", logo: "../assets/img/icons/unicons/paypal.png" },
+                        { name: "Wallet Visa", amount: "+4,270.69 USD", logo: "../assets/img/icons/unicons/wallet.png" },
+                        { name: "Transferencia Reembolso", amount: "+12,637.91 USD", logo: "../assets/img/icons/unicons/chart.png" },
+                        { name: "Tarjeta de Crédito Productos", amount: "-5,838.71 USD", logo: "../assets/img/icons/unicons/cc-success.png" },
+                        { name: "Descuento", amount: "-1,092.45 USD", logo: "../assets/img/icons/unicons/wallet.png" },
+                      ]
+                    };
+                
+                    // Obtener los datos correspondientes al periodo
+                    const selectedData = transactionData[period];
+                    
+                    // Limpiar la lista actual
+                    const transactionList = document.getElementById('transactionList');
+                    transactionList.innerHTML = '';
+                
+                    // Llenar la lista con los nuevos valores
+                    selectedData.forEach(transaction => {
+                      const listItem = document.createElement('li');
+                      listItem.classList.add('d-flex', 'mb-4', 'pb-1');
+                      
+                      listItem.innerHTML = `
+                        <div class="avatar flex-shrink-0 me-3">
+                          <img src="${transaction.logo}" alt="${transaction.name}" class="rounded" />
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            <small class="text-muted d-block mb-1">${transaction.name}</small>
+                            <h6 class="mb-0">${transaction.name}</h6>
+                          </div>
+                          <div class="user-progress d-flex align-items-center gap-1">
+                            <h6 class="mb-0">${transaction.amount}</h6>
+                          </div>
+                        </div>
+                      `;
+                      transactionList.appendChild(listItem);
+                    });
+                  }
+                
+                  // Llamar a la función por defecto con "semana"
+                  changeTransactionValues('semana');
+                </script>
+                
+              </div>
+            </div>
+            <!-- / Content -->
+            <div class="content-backdrop fade"></div>
+          </div>
+        </div>
+      </div>
+      <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../assets/vendor/js/bootstrap.js"></script>
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="../assets/vendor/js/menu.js"></script>
+    <!-- Vendors JS -->
+    <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+    <!-- Main JS -->
+    <script src="../assets/js/main.js"></script>
+    <!-- Page JS -->
+    <script src="../assets/js/dashboards-analytics.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
+</html>
